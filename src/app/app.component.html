@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form>
+        <div class="form-group">
+          <label for="username">username</label>
+          <input
+            type="text"
+            id="username"
+            [formControl]="username"
+            class="form-control"
+          />
+          <span *ngIf="!username.valid && username.touched" class="help-block">
+            <span *ngIf="username.errors['required']"
+              >This field is required!</span
+            >
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="email">email</label>
+          <input
+            type="text"
+            id="email"
+            [formControl]="email"
+            class="form-control"
+          />
+          <span *ngIf="!email.valid && email.touched" class="help-block"
+            >Please enter a valid email!</span
+          >
+        </div>
+        <div class="form-group">
+          <label for="password">password</label>
+          <input
+            type="text"
+            id="password"
+            [formControl]="password"
+            class="form-control"
+          />
+          <span *ngIf="!password.valid && password.touched" class="help-block">
+            <span *ngIf="password.errors['required']"
+              >This field is required!</span
+            >
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="addressLine">addressLine</label>
+          <input
+            type="text"
+            id="addressLine"
+            [formControl]="addressLine"
+            class="form-control"
+          />
+          <span
+            *ngIf="!addressLine.valid && addressLine.touched"
+            class="help-block"
+          >
+            <span *ngIf="addressLine.errors['required']"
+              >This field is required!</span
+            >
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="city">city</label>
+          <input
+            type="text"
+            id="city"
+            [formControl]="city"
+            class="form-control"
+          />
+          <span *ngIf="!city.valid && city.touched" class="help-block">
+            <span *ngIf="city.errors['required']">This field is required!</span>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="cityCode">city code</label>
+          <input
+            type="text"
+            id="cityCode"
+            [formControl]="cityCode"
+            class="form-control"
+          />
+          <span *ngIf="!cityCode.valid && cityCode.touched" class="help-block">
+            <span *ngIf="cityCode.errors['required']"
+              >This field is required!</span
+            >
+          </span>
+        </div>
+
+        <button class="btn btn-primary" (click)="onSubmit($event)">
+          Inscription
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="display" *ngIf="newUser">
+    <p>{{ "nom : " + newUser.username }}</p>
+    <p>{{ "email : " + newUser.email }}</p>
+    <p>{{ "rue : " + newUser.addressLine }}</p>
+    <p>{{ "ville : " + newUser.city }}</p>
+    <p>{{ "code postal : " + newUser.cityCode }}</p>
+  </div>
+</div>
+<div></div>
