@@ -11,8 +11,8 @@ export class AppComponent {
   constructor() {}
   newUser = null;
 
-  username = new FormControl('aaaa');
-  email = new FormControl('jhg@hgjh.com');
+  username = new FormControl('');
+  email = new FormControl('');
   password = new FormControl('');
   addressLine = new FormControl('');
   city = new FormControl('');
