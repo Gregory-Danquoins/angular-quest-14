@@ -15,8 +15,8 @@ export class AppComponent {
   email = new FormControl('jhg@hgjh.com');
   password = new FormControl('');
   addressLine = new FormControl('');
-  city = new FormControl();
-  cityCode = new FormControl();
+  city = new FormControl('');
+  cityCode = new FormControl('');
 
   onSubmit(e) {
     e.preventDefault();
